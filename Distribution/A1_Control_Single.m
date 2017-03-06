@@ -3,7 +3,7 @@ clearvars -EXCEPT Params aaa
  
 %% -- Step1: Initaliaiton as inducer=0 stable solution.
 
-InducerSingle = 25e-2;
+InducerSingle = 25e-3;
 
 Params=Step1_ReactionConstants();
 

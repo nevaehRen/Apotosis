@@ -80,7 +80,7 @@ function [Apotosis, Table]=TC(Inducers,InitialSpace,Params,n)
             parfor j=1:n
 
             %% Change pC9,pC3,XIAP initial concentration 
-                          INIt = zeros(1,19);
+                          INIt = zeros(1,24);
                           INIt(16) = 2000; 
                           INIt(19) = Params.Inducer; 
                      INIt([1,11,7]) = InitialSpace(j,1:3);
