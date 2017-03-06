@@ -1,0 +1,27 @@
+#function: Change
+#!/bin/sh
+
+
+DIR_PATH=$PWD         #File address                
+OBJ_FILE=$2           #FileName
+
+# Original  Content
+echo  "the original content:"
+sed -n -e "12p" $PWD/$OBJ_FILE    # Old Content
+echo " "
+
+# Revise    Content
+
+sed -i "12s/Searching/$3/g" $PWD/$OBJ_FILE
+sed -i "12s/WT/$4/g" $PWD/$OBJ_FILE
+sed -i "12s/100/$1/g" $PWD/$OBJ_FILE
+
+
+# Refreshed Content
+echo "Now, the  content:"
+sed -n -e "12p" $PWD/$OBJ_FILE      # New Content
+echo " "
+
+
+
+ 

@@ -1,0 +1,15 @@
+#!/bin/bash
+#SBATCH -J rhx_fat4long
+#SBATCH -p fat4long
+#SBATCH -N 1 
+#SBATCH --ntasks-per-node=12
+#SBATCH -o rhx_fat4long_%j.out
+#SBATCH -e rhx_fat4long_%j.err
+#SBATCH --no-requeue
+#SBATCH -A tangc_g1
+#SBATCH --qos=tangcf4l
+source ~/.bash_profile
+cd /lustre1/tangc_pkuhpc/RHX/Searching/WT/MassAction_Cluster100
+/usr/local/MATLAB/R2013a/bin/matlab -r A2_Control_Searching
+
+

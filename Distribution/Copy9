@@ -1,0 +1,21 @@
+
+Index=100
+Index_up=$[Index+100]
+
+
+for (( i=0; i<10; i++)); do
+
+cp -r MassAction_Cluster "MassAction_Cluster$Index"
+cd "MassAction_Cluster$Index"
+sh IndexRevise $Index $Index_up
+Index=$[Index+100]
+Index_up=$[Index_up+100]
+
+pkurun-fat4way 1 1 "nohup matlab -nojvm -nodisplay -nosplash -nodesktop < A2_Control_Searching.m" 
+
+cd ..
+
+#echo $Index
+#echo $Index_up
+
+done;

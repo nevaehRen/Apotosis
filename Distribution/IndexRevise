@@ -1,0 +1,35 @@
+#function: Change
+#!/bin/sh
+
+if [ $# -ne 3 ]
+then
+ echo "Error: must be one parameter "
+ exit
+fi
+
+DIR_PATH=$PWD         #File address                
+OBJ_FILE="A2_Control_Searching.m" #FileName
+
+# Original  Content
+echo  "the original content:"
+sed -n -e "7p" $PWD/$OBJ_FILE      # Old Content
+sed -n -e "19,20p" $PWD/$OBJ_FILE    # Old Content
+echo " "
+
+# Revise    Content
+sed -i "7s/Waiting/$3/g" $PWD/$OBJ_FILE
+sed -i "19s/100/$1/g" $PWD/$OBJ_FILE
+sed -i "20s/200/$2/g" $PWD/$OBJ_FILE
+
+#sed -i '' "19s/100/$1/g" $PWD/$OBJ_FILE
+#sed -i '' "20s/200/$2/g" $PWD/$OBJ_FILE
+
+# Refreshed Content
+echo "Now, the  content:"
+sed -n -e "7p" $PWD/$OBJ_FILE      # New Content
+sed -n -e "19,20p" $PWD/$OBJ_FILE      # New Content
+echo " "
+
+
+
+ 
